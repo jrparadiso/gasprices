@@ -1,0 +1,139 @@
+body,
+#chart_div,
+#top,
+#bottom,
+#right,
+#left,
+h2,
+h4 {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.5rem;
+}
+
+.on {
+  background: salmon;
+}
+.off {
+  background: #ccc;
+}
+.right {
+  float: right;
+}
+.small {
+  display: none;
+}
+#chart_div,
+#top,
+#bottom {
+  width: 100%;
+  position: fixed;
+}
+
+#top {
+  height: calc(50% - 1rem);
+  top: 0;
+  display: flex;
+}
+
+#left,
+#right {
+  flex-grow: 1;
+  width: 50%;
+  background-color: #c1d1f0;
+}
+#list {
+  margin-bottom: 3rem;
+}
+#chart_div {
+  height: calc(50% - 1rem);
+  bottom: 2rem;
+}
+
+#bottom {
+  height: 2rem;
+  bottom: 0;
+  padding: 0 0 0 5px;
+  background-color: #c1d1f0;
+}
+#bottomLine {
+  font-size: 0.8em;
+  line-height: 2rem;
+}
+#left {
+  overflow-y: scroll;
+  padding: 20px 20px 20px 2rem;
+  z-index: 10;
+}
+#right {
+  z-index: 20;
+  margin-left: -1.5rem;
+  padding: 20px 20px 20px 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+#rightTitle {
+  padding-left: 10px;
+}
+#wrapper {
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 0.3rem;
+}
+div.click {
+  flex: 1 0 0px;
+  border: thin solid black;
+  font-size: 1.25rem;
+  margin: 5px 15px;
+  text-align: center;
+  vertical-align: middle;
+  max-height: 110px;
+  min-width: 280px;
+  padding-top: 0.5rem;
+  cursor: pointer;
+}
+.salmon {
+  padding: 0 0.5rem;
+  border: thin solid black;
+  background-color: salmon;
+  margin: 0 0.3rem;
+}
+.silver {
+  padding: 0 0.5rem;
+  border: thin solid black;
+  background-color: #ccc;
+  margin: 0 0.3rem;
+}
+/* media queries */
+@media only screen and (max-width: 768px) {
+  #left,
+  #descr {
+    display: none;
+  }
+  #left {
+    overflow-y: auto;
+  }
+  #rightTitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 10px;
+  }
+  div.click {
+    padding-top: 0.2rem;
+    font-size: 1rem;
+  }
+  .small {
+    display: block;
+    cursor: pointer;
+  }
+}
+::-webkit-scrollbar {
+  display: none;
+}

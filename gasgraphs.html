@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    right>section:first-child {
+        flex-direction: column;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gas Prices</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="gasgraphs.js"></script>
+    <link href="gasgraphs.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+
+<body>
+    <header id="top">
+        <div id="left">
+            <div class="small right" onclick="$('#left').slideUp('300');$('#right').delay(300).slideDown('slow');">Graphs</div>
+            <h2>Gas & Petroleum Prices </h2>
+            <h4>The U.S. price per gallon of regular gasoline and world price of a barrel of petroleum.</h4>
+            <ul id="list"></ul>
+        </div>
+        <div id="right">
+            <div class="rightTitle" style="display: flex; flex-direction: row; justify-content:space-between; padding-left: 10px; ">
+                <div>
+                    Select Graph Type <span id="descr">-<span class="salmon">&nbsp;</span>recommended graphs and
+                        <span class="silver">&nbsp;</span>not appropriate graphs</span>
+                </div>
+                <div class="small" onclick="$('#right').slideUp('300');$('#left').delay(300).slideDown('slow');">Data</div>
+            </div>
+            <div id="wrapper">
+                <div class="click on" onclick="goChart('AreaChart', 500);">AreaChart</div>
+                <div class="click on" onclick="goChart('LineChart', 500);">LineChart</div>
+                <div class="click on" onclick="goChart('ColumnChart', 16);">ColumnChart</div>
+                <div class="click off" onclick="goChart('ScatterChart', 500);">ScatterChart</div>
+                <div class="click off" onclick="goChart('PieChart', 9);">PieChart</div>
+                <div class="click off" onclick="goChart('DonutChart', 12);">DonutChart</div>
+            </div>
+
+        </div>
+    </header>
+    <div id="chart_div"></div>
+    <footer id="bottom">
+        <div id="bottomLine">The source of the data is U.S. Energy Information Administration @
+            <a href="https://www.eia.gov">https://www.eia.gov</a>.
+        </div>
+    </footer>
+</body>
+
+</html>
